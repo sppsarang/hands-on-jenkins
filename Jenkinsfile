@@ -6,29 +6,35 @@ pipeline {
         echo 'Building...'
       }
     }
+
     stage('Test') {
       parallel {
         stage('Test Firefox') {
           steps {
-            sh 'echo \'Testing Firefox\''
+            bat 'echo \'Testing Firefox\''
           }
         }
+
         stage('Test Chrome') {
           steps {
-            sh 'echo \'Testing Chrome\'; exit 1'
+            bat 'echo \'Testing Chrome\'; exit 1'
           }
         }
+
         stage('Test Edge') {
           steps {
-            sh 'echo \'Testing Edge\''
+            bat 'echo \'Testing Edge\''
           }
         }
+
       }
     }
+
     stage('Deploy') {
       steps {
         echo 'Deploy'
       }
     }
+
   }
 }
