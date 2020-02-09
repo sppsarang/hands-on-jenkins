@@ -1,6 +1,1 @@
-pipeline {
-  agent any
-  stages {
 
-  }
-}
